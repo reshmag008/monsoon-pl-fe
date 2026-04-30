@@ -30,9 +30,9 @@ const TeamList: React.FC = () => {
                     <>
                     <div style={cardStyle} key={index} onClick={()=>getTeamPlayers(team)}>
                         <div style={{display:'flex',marginTop:'10px'}}>
-                        {/* <img  src={`https://storage.googleapis.com/auction-players/${team.team_logo}`} alt="logo" style={imageStyle}/> */}
+                        <img  src={`https://storage.googleapis.com/rajas_pl/${team.team_logo}`} alt="logo" style={imageStyle}/>
 
-                            <img key={index} src={BACKEND_URL + '/player_images/' + team.team_logo} alt="logo" style={imageStyle}/>
+                            {/* <img key={index} src={BACKEND_URL + '/player_images/' + team.team_logo} alt="logo" style={imageStyle}/> */}
                             <div >
                                 <h4>{team.team_name}</h4>
                             </div>

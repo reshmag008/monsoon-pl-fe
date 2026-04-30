@@ -15,11 +15,11 @@ const FifaGoldCard: React.FC<Props> = ({player}) => {
       }, [player]);
 
   const container: CSSProperties = {
-    display: "flex",
+    // display: "flex",
     justifyContent: "center",
     alignItems: "center",
     padding:'20px',
-    background: "#e5e7eb", // light bg to highlight gold
+    background: "white", // light bg to highlight gold
   };
 
   const card: CSSProperties = {
@@ -57,8 +57,8 @@ const FifaGoldCard: React.FC<Props> = ({player}) => {
   };
 
   const image: CSSProperties = {
-    width: "90%",
-    height: "90%",
+    width: "92%",
+    // height: "90%",
     objectFit: "contain",
   };
 
@@ -83,13 +83,14 @@ const FifaGoldCard: React.FC<Props> = ({player}) => {
   };
 
   const name: CSSProperties = {
-    fontSize: "clamp(16px, 2vw, 20px)",
+    fontSize: "clamp(20px, 2vw, 20px)",
     fontWeight: "bold",
     letterSpacing: "1px",
+    
   };
 
   const role: CSSProperties = {
-    fontSize: "clamp(12px, 1.5vw, 14px)",
+    fontSize: "clamp(20px, 1.5vw, 14px)",
     marginTop: "2px",
   };
 
@@ -118,19 +119,7 @@ const FifaGoldCard: React.FC<Props> = ({player}) => {
 
   return (
     <div style={container}>
-      <div
-        style={card}
-        onMouseEnter={(e) =>
-          (e.currentTarget.style.transform = "scale(1.03)")
-        }
-        onMouseLeave={(e) =>
-          (e.currentTarget.style.transform = "scale(1)")
-        }
-      >
-        {/* Shine */}
-        <div style={shine} />
-
-        {/* LEFT IMAGE */}
+     
         <div style={left}>
           <img
             src={`https://storage.googleapis.com/rajas_pl/${currentPlayer.profile_image}`}
@@ -139,9 +128,19 @@ const FifaGoldCard: React.FC<Props> = ({player}) => {
           />
         </div>
 
+        <div style={{paddingTop : '20px'}}/>
+        <div style={left}>
+        <div style={name}>{currentPlayer.id} . {currentPlayer.fullname.toUpperCase()}</div>
+        </div>
+
+        <div style={left}>
+        <div style={name}>{currentPlayer.player_role}</div>
+        </div>
+
+
+
         {/* RIGHT CONTENT */}
-        <div style={right}>
-          {/* Top */}
+        {/* <div style={right}>
           <div style={topRow}>
             <div>
               <div style={rating}>{currentPlayer.id}</div>
@@ -154,16 +153,15 @@ const FifaGoldCard: React.FC<Props> = ({player}) => {
             </div>
           </div>
 
-          {/* Stats */}
           <div style={statsGrid}>
             <div style={stat}><span>Batting Style</span><span style={statValue}>{currentPlayer.batting_style}</span></div>
             <div style={stat}><span>Bowling Style</span><span style={statValue}>{currentPlayer.bowling_style}</span></div>
             <div style={stat}><span>Contact No</span><span style={statValue}>{currentPlayer.contact_no}</span></div>
             
           </div>
-        </div>
+        </div> */}
       </div>
-    </div>
+    // </div>
   );
 };
 
