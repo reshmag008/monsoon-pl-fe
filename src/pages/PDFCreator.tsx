@@ -75,40 +75,44 @@ const PDFCreator: React.FC<props> = ({playerList,teamName}) => {
 
 
                 <div style="display:flex">
-                    <img src="${profileImageBase64}" alt="Player Image" style="height: 15.9rem; width: 14rem; margin-left: 25px; object-fit: cover; margin-top: 570px; border-radius:35px;
+                    <img src="${profileImageBase64}" alt="Player Image" style="height: 19rem; width: 14.5rem; margin-left: 39px; object-fit: cover; margin-top: 328px; border-radius:10px;
                     mask-composite: intersect;" />
                 </div>
 
                 <div style="text-align:left;">
-                    <p style="margin-top:-350px; margin-left:290px; font-size: 30px; color: white; font-weight:bold;">${player.id}</p>
+                    <p style="margin-top:140px; margin-left:490px; font-size: 30px; color: white; font-weight:bold;">${player.id}</p>
+                </div>
+
+                <div style="text-align:center">
+                    <p style="margin-top:-275px; margin-left:300px; font-size: 23px; color:black; font-weight:bold;transform: rotate(26.5deg)">${player.fullname.toUpperCase()}</p>
+                </div>
+
+               <div style="text-align:center">
+                    <p style="margin-top:30px; font-size: 23px; color:black; font-weight:bold;margin-left:280px; transform: rotate(26.5deg)" ">${player.contact_no}</p>
                 </div>
                
                 <div style="display:flex;">
-                    <p style="margin-top:81px; font-size: 20px; color:#006A50; font-weight:bold;padding-left:450px;">${player.player_role}</p>
+                    <p style="margin-top:5px; font-size: 23px; color:white; font-weight:bold;padding-left:280px;">${player.player_role}</p>
                 </div>
 
                 
                 <div style="display:flex;">
-                    <p style="margin-top:-13px; font-size: 20px; color:#006A50; font-weight:bold;padding-left:450px;">${player.batting_style}</p>
+                    <p style="margin-top:-5px; font-size: 23px; color:white; font-weight:bold;padding-left:280px;">${player.batting_style}</p>
                 </div>
 
                 
                 <div style="display:flex;">
-                    <p style="margin-top:-12px; font-size: 20px; color:#006A50; font-weight:bold;padding-left:450px;">${player.bowling_style}</p>
+                    <p style="margin-top:-10px; font-size: 23px; color:white; font-weight:bold;padding-left:280px;">${player.bowling_style}</p>
                 </div>
 
                 
                 <div style="display:flex;">
-                    <p style="margin-top:-10px; font-size: 20px; color:#006A50; font-weight:bold;padding-left:450px;">${capitalizeFirst(player.location)}</p>
+                    <p style="margin-top:-10px; font-size: 23px; color:white; font-weight:bold;padding-left:280px;">${capitalizeFirst(player.location)}</p>
                 </div>
                 
-                <div style="display:flex;margin-top:-10px; ">
-                    <p style="font-size: 20px; color:#006A50; font-weight:bold;padding-left:390px;">${player.contact_no}</p>
-                </div>
+                
 
-                 <div style="display:flex;">
-                    <p style="margin-top:-8px; padding-left:300px; font-size: 23px; color:white; font-weight:bold;">${player.fullname.toUpperCase()}</p>
-                </div>
+                 
 
                  
             </div>
@@ -138,7 +142,7 @@ const PDFCreator: React.FC<props> = ({playerList,teamName}) => {
     }
 
     // Save the PDF
-    pdf.save(teamName ? teamName+'.pdf' : "Nileswar PL Players.pdf");
+    pdf.save(teamName ? teamName+'.pdf' : "Monsoon PL Players.pdf");
 };
 
 

@@ -115,7 +115,7 @@ const AuctionCenter: React.FC = () => {
     localStorage.setItem("team_complete",  JSON.stringify({}))
     localStorage.setItem('close_popup', 'false');
     PlayerService().displayPlayer(players[random]).then((response: any) => {
-      console.log("response== ", response);
+      console.log("response==displayPlayer ", response);
     })
     setIsLoading(false);
   };
@@ -370,46 +370,64 @@ const AuctionCenter: React.FC = () => {
       {isLoading && <Loader type="spinner-cub" bgColor={'green'} color={'green'} title={"Selecting Player..."} size={100} />}
       {!isLoading && currentBidPlayer && currentBidPlayer.id && (
 
-        <div style={playerCountStyle}>
-          <div id='content-id' style={playerListContainer}>
-            <div style={players__card__wrap} >
 
-              <div style={{ display: "flex" }}>
-                <img  src={`https://storage.googleapis.com/rajas_pl/${currentBidPlayer.profile_image}`} alt="logo" style={profileImageStyle}/>
-                {/* <img src={BACKEND_URL + '/player_images/' + currentBidPlayer.profile_image} alt="logo" style={profileImageStyle} /> */}
+<div>
+
+  <div style={playerBorder}>
+                <img  src={`https://storage.googleapis.com/rajas_pl/${currentBidPlayer.profile_image}`} alt="logo" style={profileImageStyleNew}/>
               </div>
 
+             
 
-              <div style={cardHeader}>
-
-
-                <div style={cardBodyTextStyle}>
-
-                 <div style={{ display: 'flex', textAlign: 'center', width: '53px', }}>
-                    <span style={fullNameText}>{currentBidPlayer.id}</span>
+                  <div style={{ display: 'flex', marginLeft: '470px',width: '366px', marginTop:'-159px', textAlign:'left' }}>
+                    <span style={idText}>{currentBidPlayer.id}.{currentBidPlayer.fullname.toUpperCase()} </span>
                   </div>
 
-                  <div style={{ display: 'flex', marginTop:'-280px', marginLeft:'530px' }}>
-                    <span style={spanText1}>{currentBidPlayer.player_role} </span>
-                  </div>
-                  <div style={{ display: 'flex', marginTop: '0px',marginLeft:'530px' }}>
-                    <span style={spanText1}>{currentBidPlayer.batting_style} </span>
-                  </div>
-                  <div style={{ display: 'flex', marginTop: '-3px',marginLeft:'530px'}}>
-                    <span style={spanText1}>{currentBidPlayer.bowling_style} </span>
-                  </div>
-                  <div style={{ display: 'flex', marginTop: '-5px',marginLeft:'530px', width:'176px', fontSize: currentBidPlayer?.location?.length >10 ? "26px" : "30px"}}>
-                    <span style={spanText}>
-                      {capitalizeFirst(currentBidPlayer?.location)}
-                    </span>
-                  </div>
-                  <div style={{ display: 'flex', marginLeft: '530px' }}>
-                    <span style={spanText}>{currentBidPlayer.contact_no} </span>
-                  </div>
+  </div>
 
-                   <div style={{ display: 'flex', marginLeft: '470px',width: '366px', marginTop:'14px', textAlign:'left' }}>
-                    <span style={idText}>{currentBidPlayer.fullname.toUpperCase()} </span>
-                  </div>
+
+
+
+
+        // <div style={playerCountStyle}>
+        //   <div id='content-id' style={playerListContainer}>
+        //     <div style={players__card__wrap} >
+
+        //       <div style={{ display: "flex" }}>
+        //         <img  src={`https://storage.googleapis.com/rajas_pl/${currentBidPlayer.profile_image}`} alt="logo" style={profileImageStyle}/>
+        //       </div>
+
+
+        //       <div style={cardHeader}>
+
+
+        //         <div style={cardBodyTextStyle}>
+
+        //          <div style={{ display: 'flex', textAlign: 'center', width: '53px', }}>
+        //             <span style={fullNameText}>{currentBidPlayer.id}</span>
+        //           </div>
+
+        //           <div style={{ display: 'flex', marginTop:'-280px', marginLeft:'530px' }}>
+        //             <span style={spanText1}>{currentBidPlayer.player_role} </span>
+        //           </div>
+        //           <div style={{ display: 'flex', marginTop: '0px',marginLeft:'530px' }}>
+        //             <span style={spanText1}>{currentBidPlayer.batting_style} </span>
+        //           </div>
+        //           <div style={{ display: 'flex', marginTop: '-3px',marginLeft:'530px'}}>
+        //             <span style={spanText1}>{currentBidPlayer.bowling_style} </span>
+        //           </div>
+        //           <div style={{ display: 'flex', marginTop: '-5px',marginLeft:'530px', width:'176px', fontSize: currentBidPlayer?.location?.length >10 ? "26px" : "30px"}}>
+        //             <span style={spanText}>
+        //               {capitalizeFirst(currentBidPlayer?.location)}
+        //             </span>
+        //           </div>
+        //           <div style={{ display: 'flex', marginLeft: '530px' }}>
+        //             <span style={spanText}>{currentBidPlayer.contact_no} </span>
+        //           </div>
+
+        //            <div style={{ display: 'flex', marginLeft: '470px',width: '366px', marginTop:'14px', textAlign:'left' }}>
+        //             <span style={idText}>{currentBidPlayer.fullname.toUpperCase()} </span>
+        //           </div>
 
                   
 
@@ -421,14 +439,14 @@ const AuctionCenter: React.FC = () => {
 
 
 
-                </div>
-              </div>
-              <div style={cardFooter}>
+        //         </div>
+        //       </div>
+        //       <div style={cardFooter}>
 
-              </div>
-            </div>
-          </div>
-        </div>
+        //       </div>
+        //     </div>
+        //   </div>
+        // </div>
       )}
 
       <div style={playerControlStyle}>
@@ -529,13 +547,13 @@ const cardBodyTextStyle: React.CSSProperties = {
 };
 
 const fullNameText: React.CSSProperties = {
-  marginTop: '-333px',
+  marginTop: '-157px',
   fontWeight: 'bold',
   fontSize: '34px',
-  color: "white",
+  color: "black",
   width: "53",
   height: "57px",
-  marginLeft : "775px"
+  marginLeft : "385px"
 }
 
 
@@ -608,6 +626,23 @@ const svgStyle: React.CSSProperties = {
   filter:
     "invert(85%) sepia(20%) saturate(150%) hue-rotate(200deg) brightness(120%) contrast(120%)",
 };
+
+
+const profileImageStyleNew: React.CSSProperties = {
+  height: '12rem',
+  width: '10rem',
+  // padding: '5px',
+  alignItems: 'flex-start',
+  // display: 'grid',
+  marginLeft: '68px',
+  // marginTop: '194px',
+  objectFit: 'cover',
+  borderRadius: "15px"
+  // borderImage: "linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%)",
+  // maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%), linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%)",
+  // maskComposite: "intersect",
+
+}
 
 const profileImageStyle: React.CSSProperties = {
   height: '18rem',
@@ -693,6 +728,18 @@ if (isMobile) {
   playerListContainer.padding = "0rem";
 }
 
+const playerBorder : React.CSSProperties = {
+  display:'flex',
+  border: "1px solid #ccc",
+  borderRadius: "8px",
+  padding: "8px",
+  // width: "224px",
+  margin: "30px",
+  marginLeft : "174px",
+  marginRight : "174px",
+  borderBlockColor: 'green'
+};
+
 const teamCardContainer: React.CSSProperties = {
   border: "1px solid #ccc",
   borderRadius: "8px",
@@ -734,6 +781,7 @@ const inputStyle: React.CSSProperties = {
 
 const playerControlStyle: React.CSSProperties = {
   margin: "10px",
+  marginTop : "100px",
   display: 'flex',
   justifyContent: 'center'
 };

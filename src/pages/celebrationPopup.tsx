@@ -148,8 +148,8 @@ const CelebrationPopup: React.FC<Props> = ({ open, data, onClose }) => {
 
 
           <img
-            // src={`https://storage.googleapis.com/auction-players/${data?.team_logo}`}
-            src={BACKEND_URL + '/player_images/' + data.team_logo} 
+            src={`https://storage.googleapis.com/rajas_pl/${data?.team_logo}`}
+            // src={BACKEND_URL + '/player_images/' + data.team_logo} 
             alt="logo"
             style={{ width: "5rem", height: "5rem", borderRadius: "8px" }}
           />

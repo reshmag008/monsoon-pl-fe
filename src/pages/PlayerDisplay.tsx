@@ -13,7 +13,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import congratsJif from '../assets/congratulations.gif';
 import clapJif from '../assets/clap.gif'
-import playerBg from '../assets/aution_card.jpeg'
+import playerBg from '../assets/player_display.jpeg'
 import TeamTable from "./TeamTable";
 import CelebrationPopup from "./celebrationPopup";
 import PlayerDashboard from "./playerDashboard";
@@ -211,20 +211,18 @@ useEffect(() => {
 
                     </div>
 
-                        <div style={{ display: 'flex', textAlign: 'center', width: '164px', marginLeft: '1100px' }}>
-                          <span style={idText}>{currentBidPlayer.id} </span>
-                        </div>
+                        
 
                         
-                        <div style={{display: "flex" ,marginLeft:'843px', marginTop:'-346px', width:'780px'}}>
+                        <div style={{display: "flex" ,marginLeft:'433px', marginTop:'-244px', width:'780px'}}>
                             <span style={spanText}>{currentBidPlayer.player_role}</span>
                         </div>
 
-                        <div style={{display: "flex" ,marginLeft:'843px', marginTop:'0px', width:'780px'}}>
+                        <div style={{display: "flex" ,marginLeft:'433px', marginTop:'0px', width:'780px'}}>
                           <span style={spanText}>{currentBidPlayer.batting_style}</span>
                         </div>
 
-                        <div style={{display: "flex",marginLeft:'843px', marginTop:'-5px', width:'780px' }}>
+                        <div style={{display: "flex",marginLeft:'433px', marginTop:'-5px', width:'780px' }}>
                             <span
                             style={spanText}
                             >
@@ -232,17 +230,21 @@ useEffect(() => {
                             </span>
                         </div>
 
-                        <div style={{display: 'flex', marginLeft:'843px', marginTop:'-4px', width:'780px',fontSize: currentBidPlayer?.location?.length >10 ? "36px" : "40px"}}>
+                        <div style={{display: 'flex', marginLeft:'433px', marginTop:'-14px', width:'780px',fontSize: currentBidPlayer?.location?.length >10 ? "36px" : "40px"}}>
                             <span style={locText}> {capitalizeFirst(currentBidPlayer.location)}</span>
                         </div>
 
-                        <div style={{ display: "flex",marginLeft:'843px', marginTop:'-1px', width:'780px' }}>
+                        <div style={{ display: "flex",marginLeft:'433px', marginTop:'-1px', width:'780px' }}>
                             <span style={spanText}>
                             {currentBidPlayer.contact_no}
                             </span>
                         </div>
 
-                         <div style={{display: 'flex',  width: '440px', marginLeft: '770px',marginTop:'22px' , textAlign:'left'}}>
+                          <div style={{ display: 'flex', textAlign: 'center', width: '164px', marginLeft: '684px' }}>
+                          <span style={idText}>{currentBidPlayer.id} </span>
+                        </div>
+
+                         <div style={{display: 'flex',  width: '466px', marginLeft: '802px',marginTop:'5px' , textAlign:'center'}}>
                           <span style={idText1}>{currentBidPlayer.fullname.toUpperCase()} </span>
                         </div>
 
@@ -342,28 +344,28 @@ const imageStyle1: React.CSSProperties = {
 const spanText: React.CSSProperties = {
   fontWeight: "bold",
   fontSize: "40px",
-  color: "black",
+  color: "white",
 };
 
 const locText: React.CSSProperties = {
   fontWeight: "bold",
-  color: "black",
+  color: "white",
 };
 
 const idText: React.CSSProperties = {
   fontWeight: 'bold',
   fontSize: '55px',
-  color: "white",
-  width: "164px",
+  color: "black",
+  width: "137px",
   height: "96px",
-  marginTop : '-410px'
+  marginTop : '-114px'
 }
 
 const idText1: React.CSSProperties = {
   fontWeight: 'bold',
   width: "488px",
   height: "80px",
-  color: "black",
+  color: "white",
   fontSize : '40px',
  justifyContent: 'center',alignItems: 'center',
 
@@ -387,11 +389,11 @@ const svgStyle: React.CSSProperties = {
 };
 
 const profileImageStyle: React.CSSProperties = {
-  height: "24rem",
-  width: "19rem",
-  marginTop: "257px",
+  height: "28.7rem",
+  width: "23.2rem",
+  marginTop: "116px",
   objectFit: "cover",
-  marginLeft: "92px",
+  marginLeft: "821px",
   // borderRadius : '21px'
 };
 

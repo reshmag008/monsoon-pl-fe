@@ -8,6 +8,7 @@ import TeamList from "./pages/TeamList";
 import TeamRegistration from "./pages/TeamRegistration";
 import AuctionLive from "./pages/AuctionLive";
 import PlayerDashboard from "./pages/playerDashboard";
+import Live from "./pages/live"
 function AppRouter() {
   return (
     <div>
@@ -20,7 +21,7 @@ function AppRouter() {
             <Route path="/player-display" element={<PlayerDisplay />} />
             <Route path="/team-list" element={<TeamList />} />
             <Route path="/team-registration" element={<TeamRegistration />} />
-            <Route path="/auction_live" element={<AuctionLive/>} />
+            <Route path="/auction_live" element={<Live/>} />
             <Route path="/player-dashboard" element={<PlayerDashboard/>} />
             
           </Routes>
