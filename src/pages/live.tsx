@@ -476,11 +476,11 @@ const [socket, setSocket] = useState<any>(null);
         </div>
 
 
-        <img
+        {/* <img
             src={auctionIcon}
             alt="auction"
             style={logoStyle}
-        />
+        /> */}
 
 
       </div>
