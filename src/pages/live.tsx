@@ -10,7 +10,9 @@ import TeamTable from "./TeamTable";
 import Accordion from 'react-bootstrap/Accordion';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import Loader from "react-js-loader";
-import PlayerCard from "./PlayerCard";
+import bklogo from '../assets/bk_logo.jpeg'
+import auctionIcon from '../assets/icon.png'
+
 
 const PlayerAuctionView: React.FC = () => {
   const isMobile = window.innerWidth < 768;
@@ -276,7 +278,7 @@ const [socket, setSocket] = useState<any>(null);
   const topBarStyle: React.CSSProperties = {
     display: "flex",
     justifyContent: "center",
-    gap: isMobile ? "10px" : "20px",
+    gap: isMobile ? "9px" : "20px",
     marginBottom: "25px",
     flexWrap: "wrap",
   };
@@ -340,6 +342,21 @@ const [socket, setSocket] = useState<any>(null);
     boxShadow:
       "0 0 15px gold, 0 0 35px rgba(255,215,0,0.5)",
   };
+
+
+   const logoStyle: React.CSSProperties = {
+    marginTop : isMobile ? "15px" : "0px",
+  width: isMobile ? "45px" : "109px",
+  height: isMobile ? "47px" : "108px",
+  objectFit: "contain",
+  borderRadius: "10px",
+    border: isMobile
+      ? "1px solid gold"
+      : "3px solid gold",
+    boxShadow:
+      "0 0 15px gold, 0 0 35px rgba(255,215,0,0.5)",
+};
+
 
   /* RIGHT SIDE - DETAILS (50%) */
   const detailsSectionStyle: React.CSSProperties = {
@@ -414,6 +431,14 @@ const [socket, setSocket] = useState<any>(null);
     <div style={pageStyle}>
       {/* TOP BAR */}
       <div style={topBarStyle}>
+
+        <img
+            src={bklogo}
+            alt="auction"
+            style={logoStyle}
+        />
+
+        
         <div style={countCardStyle}>
           <div style={countLabelStyle}>SOLD</div>
           <div
@@ -449,6 +474,15 @@ const [socket, setSocket] = useState<any>(null);
             {pendingCount}
           </div>
         </div>
+
+
+        <img
+            src={auctionIcon}
+            alt="auction"
+            style={logoStyle}
+        />
+
+
       </div>
 
       {/* PLAYER CARD */}
@@ -514,29 +548,10 @@ const [socket, setSocket] = useState<any>(null);
       <div style={teamListContainer}>
   <Accordion onSelect={handleAccordionSelect}>
     {/* Table Header */}
-    {/* <div
-      style={{
-        ...rowGrid,
-        background:
-          "linear-gradient(135deg, #FFD700, #B8860B)",
-        color: "#000",
-        fontWeight: 700,
-        padding: "14px",
-        borderRadius: "14px",
-        marginBottom: "12px",
-      }}
-    >
-      <div>Team Name</div>
-      <div>Player Count</div>
-      <div>Total Points</div>
-      <div>Max Bid Amount</div>
-      <div></div>
-    </div> */}
-
-    {allTeams.map((team: any, index:any) => {
+    {allTeams.map((team: any, teamIndex:any) => {
       const teamColor =
         teamColors[
-          index
+          teamIndex
         ] || "#6c757d";
 
       return (
@@ -626,7 +641,7 @@ const [socket, setSocket] = useState<any>(null);
               <div>Player</div>
               <div>ID</div>
               <div>Role</div>
-              <div>Bid Amount</div>
+              <div>Points</div>
             </div>
 
             {/* Loader */}
@@ -659,7 +674,7 @@ const [socket, setSocket] = useState<any>(null);
                         : "#222",
                     borderRadius: "10px",
                     marginBottom: "8px",
-                    color: "#fff",
+                    color: `${teamColors[teamIndex]}`,
                     transition:
                       "0.3s ease",
                   }}
@@ -686,11 +701,9 @@ const [socket, setSocket] = useState<any>(null);
 
                   <div
                     style={{
-                      color: "#00ff7f",
                       fontWeight: 700,
                     }}
                   >
-                    
                     {player?.bid_amount?.toLocaleString()}
                   </div>
                 </div>
