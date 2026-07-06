@@ -1,4 +1,4 @@
-export const BACKEND_URL =  "https://nileswar-pl-be-204746249106.europe-west1.run.app/" //  "http://localhost:8080";  // "https://my-node-app-204746249106.asia-south1.run.app/" //  ; 
+export const BACKEND_URL =  "https://rajas-backend-204746249106.europe-west1.run.app/" //  "http://localhost:8080";  // "https://my-node-app-204746249106.asia-south1.run.app/" //  ; 
 export const TOTAL_PLAYER = 10
 
 

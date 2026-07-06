@@ -75,39 +75,39 @@ const PDFCreator: React.FC<props> = ({playerList,teamName}) => {
 
 
                 <div style="display:flex">
-                    <img src="${profileImageBase64}" alt="Player Image" style="height: 19rem; width: 14.5rem; margin-left: 39px; object-fit: cover; margin-top: 328px; border-radius:10px;
+                    <img src="${profileImageBase64}" alt="Player Image" style="height: 17rem; width: 13rem; margin-left: 382px; object-fit: cover; margin-top: 475px; border-radius:10px;
                     mask-composite: intersect;" />
                 </div>
 
                 <div style="text-align:left;">
-                    <p style="margin-top:140px; margin-left:490px; font-size: 30px; color: white; font-weight:bold;">${player.id}</p>
+                    <p style="margin-top:-380px; margin-left:450px; font-size: 40px; color: white; font-weight:bold;">${player.id}</p>
                 </div>
 
-                <div style="text-align:center">
-                    <p style="margin-top:-275px; margin-left:300px; font-size: 23px; color:black; font-weight:bold;transform: rotate(26.5deg)">${player.fullname.toUpperCase()}</p>
+                <div style="text-align:left">
+                    <p style="margin-top:80px; margin-left:20px; font-size: 23px; color:black; font-weight:bold;">${player.fullname.toUpperCase()}</p>
                 </div>
 
-               <div style="text-align:center">
-                    <p style="margin-top:30px; font-size: 23px; color:black; font-weight:bold;margin-left:280px; transform: rotate(26.5deg)" ">${player.contact_no}</p>
-                </div>
-               
-                <div style="display:flex;">
-                    <p style="margin-top:5px; font-size: 23px; color:white; font-weight:bold;padding-left:280px;">${player.player_role}</p>
+                <div style="text-align:left">
+                    <p style="margin-top:40px; font-size: 23px; color:white; font-weight:bold;padding-left:200px;">${player.player_role}</p>
                 </div>
 
                 
-                <div style="display:flex;">
-                    <p style="margin-top:-5px; font-size: 23px; color:white; font-weight:bold;padding-left:280px;">${player.batting_style}</p>
+               <div style="text-align:left">
+                    <p style="margin-top:-5px; font-size: 23px; color:white; font-weight:bold;padding-left:200px;">${player.batting_style}</p>
                 </div>
 
                 
-                <div style="display:flex;">
-                    <p style="margin-top:-10px; font-size: 23px; color:white; font-weight:bold;padding-left:280px;">${player.bowling_style}</p>
+                <div style="text-align:left">
+                    <p style="margin-top:-10px; font-size: 23px; color:white; font-weight:bold;padding-left:200px;">${player.bowling_style}</p>
                 </div>
 
                 
-                <div style="display:flex;">
-                    <p style="margin-top:-10px; font-size: 23px; color:white; font-weight:bold;padding-left:280px;">${capitalizeFirst(player.location)}</p>
+                <div style="text-align:left">
+                    <p style="margin-top:-12px; font-size: 23px; color:white; font-weight:bold;padding-left:200px;">${capitalizeFirst(player.location)}</p>
+                </div>
+
+                <div style="text-align:left">
+                    <p style="margin-top:-17px; font-size: 23px; color:white; font-weight:bold;margin-left:200px;">${player.contact_no}</p>
                 </div>
                 
                 

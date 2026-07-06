@@ -214,15 +214,15 @@ useEffect(() => {
                         
 
                         
-                        <div style={{display: "flex" ,marginLeft:'433px', marginTop:'-244px', width:'780px'}}>
+                        <div style={{display: "flex" ,marginLeft:'374px', marginTop:'-338px', width:'780px'}}>
                             <span style={spanText}>{currentBidPlayer.player_role}</span>
                         </div>
 
-                        <div style={{display: "flex" ,marginLeft:'433px', marginTop:'0px', width:'780px'}}>
+                        <div style={{display: "flex" ,marginLeft:'374px', marginTop:'7px', width:'780px'}}>
                           <span style={spanText}>{currentBidPlayer.batting_style}</span>
                         </div>
 
-                        <div style={{display: "flex",marginLeft:'433px', marginTop:'-5px', width:'780px' }}>
+                        <div style={{display: "flex",marginLeft:'374px', marginTop:'1px', width:'780px' }}>
                             <span
                             style={spanText}
                             >
@@ -230,21 +230,21 @@ useEffect(() => {
                             </span>
                         </div>
 
-                        <div style={{display: 'flex', marginLeft:'433px', marginTop:'-14px', width:'780px',fontSize: currentBidPlayer?.location?.length >10 ? "36px" : "40px"}}>
+                        <div style={{display: 'flex', marginLeft:'374px', marginTop:'11px', width:'780px',fontSize: currentBidPlayer?.location?.length >10 ? "36px" : "40px"}}>
                             <span style={locText}> {capitalizeFirst(currentBidPlayer.location)}</span>
                         </div>
 
-                        <div style={{ display: "flex",marginLeft:'433px', marginTop:'-1px', width:'780px' }}>
+                        {/* <div style={{ display: "flex",marginLeft:'433px', marginTop:'-1px', width:'780px' }}>
                             <span style={spanText}>
                             {currentBidPlayer.contact_no}
                             </span>
-                        </div>
+                        </div> */}
 
-                          <div style={{ display: 'flex', textAlign: 'center', width: '164px', marginLeft: '684px' }}>
+                          <div style={{ display: 'flex', textAlign: 'center', width: '164px', marginLeft: '116px' }}>
                           <span style={idText}>{currentBidPlayer.id} </span>
                         </div>
 
-                         <div style={{display: 'flex',  width: '466px', marginLeft: '802px',marginTop:'5px' , textAlign:'center'}}>
+                         <div style={{display: 'flex',  width: '485px', marginLeft: '763px',marginTop:'-9px' , textAlign:'center'}}>
                           <span style={idText1}>{currentBidPlayer.fullname.toUpperCase()} </span>
                         </div>
 
@@ -358,14 +358,14 @@ const idText: React.CSSProperties = {
   color: "black",
   width: "137px",
   height: "96px",
-  marginTop : '-114px'
+  marginTop : '41px'
 }
 
 const idText1: React.CSSProperties = {
   fontWeight: 'bold',
   width: "488px",
   height: "80px",
-  color: "white",
+  color: "black",
   fontSize : '40px',
  justifyContent: 'center',alignItems: 'center',
 
@@ -389,12 +389,12 @@ const svgStyle: React.CSSProperties = {
 };
 
 const profileImageStyle: React.CSSProperties = {
-  height: "28.7rem",
-  width: "23.2rem",
-  marginTop: "116px",
+  height: "28.8rem",
+  width: "24.4rem",
+  marginTop: "130px",
   objectFit: "cover",
-  marginLeft: "821px",
-  // borderRadius : '21px'
+  marginLeft: "839px",
+  borderRadius : '21px'
 };
 
 
